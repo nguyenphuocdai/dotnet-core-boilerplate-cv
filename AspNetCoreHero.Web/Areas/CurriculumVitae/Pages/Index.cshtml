@@ -1,17 +1,16 @@
 ﻿@page
-@model AspNetCoreHero.Web.Areas.Products.Pages.IndexModel
-@inject Microsoft.AspNetCore.Mvc.Localization.IViewLocalizer localizer
+@model AspNetCoreHero.Web.Areas.CurriculumVitae.Pages.IndexModel
+@inject IViewLocalizer localizer
 @{
+    ViewData["Title"] = localizer["CurriculumVitae"];
+    ViewData["Caption"] = localizer["Manage CurriculumVitae"];
 }
-@{
-    ViewData["Title"] = localizer["Products"];
-    ViewData["Caption"] = localizer["Manage Products here"];
-}
+
 <div class="card">
     <div class="col-sm-12" style="padding:20px">
-        @if (User.Claims.Any(a => a.Value == MasterPermissions.Create || a.Value == ProductPermissions.Create))
+        @if (User.Claims.Any(a => a.Value == MasterPermissions.Create || a.Value == CurriculumVitaePermissions.Create))
         {
-            <a onclick="jQueryModalGet('/products?handler=CreateOrEdit','Create Product')" class="btn bg-success">
+            <a onclick="jQueryModalGet('/curriculumVitae?handler=CreateOrEdit','Create CurriculumVitae')" class="btn bg-success">
                 <i class="fa fa-plus-square"></i>
                 Create
             </a>
@@ -38,4 +37,3 @@
         });
     </script>
 }
-

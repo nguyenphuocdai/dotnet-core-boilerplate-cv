@@ -1,8 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-
-namespace AspNetCoreHero.Application.Constants
+﻿namespace AspNetCoreHero.Application.Constants
 {
     public class CustomClaimTypes
     {

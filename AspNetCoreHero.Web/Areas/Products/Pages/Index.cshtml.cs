@@ -27,7 +27,6 @@ namespace AspNetCoreHero.Web.Areas.Products.Pages
 {
     public class IndexModel : HeroPageModel<IndexModel>
     {
-
         public IEnumerable<ProductViewModel> Products { get; set; }
         public void OnGet()
         {
