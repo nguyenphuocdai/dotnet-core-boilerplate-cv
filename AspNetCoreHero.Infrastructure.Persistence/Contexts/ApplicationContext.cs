@@ -1,12 +1,10 @@
 ﻿using AspNetCoreHero.Application.Interfaces.Shared;
 using AspNetCoreHero.Domain.Common;
 using AspNetCoreHero.Domain.Entities;
+using AspNetCoreHero.Domain.Tables;
 using AspNetCoreHero.Infrastructure.Persistence.Helpers;
 using Microsoft.EntityFrameworkCore;
-using System;
-using System.Collections.Generic;
 using System.Linq;
-using System.Text;
 using System.Threading;
 using System.Threading.Tasks;
 
@@ -50,8 +48,10 @@ namespace AspNetCoreHero.Infrastructure.Persistence.Contexts
                                 EntityId = ""
                             });
                         }
-                        catch{}
-                        
+                        catch
+                        {
+                        }
+
                         break;
                     case EntityState.Modified:
                         entry.Entity.LastModified = _dateTime.Now;
@@ -67,7 +67,7 @@ namespace AspNetCoreHero.Infrastructure.Persistence.Contexts
                                 UserName = _authenticatedUser.Username,
                                 Entity = entityType,
                                 EntityId = entry.Entity.Id.ToString()
-                            }) ;
+                            });
                         }
                         catch { }
                         break;
@@ -78,12 +78,13 @@ namespace AspNetCoreHero.Infrastructure.Persistence.Contexts
         protected override void OnModelCreating(ModelBuilder builder)
         {
             //All Decimals will have 18,2 Range
-            foreach (var property in builder.Model.GetEntityTypes()
-            .SelectMany(t => t.GetProperties())
-            .Where(p => p.ClrType == typeof(decimal) || p.ClrType == typeof(decimal?)))
+            foreach (var property in builder.Model.GetEntityTypes().SelectMany(t => t.GetProperties()).Where(p => p.ClrType == typeof(decimal) || p.ClrType == typeof(decimal?)))
             {
                 property.SetColumnType("decimal(18,2)");
             }
+
+            builder.Entity<CurriculumVitae>().ToTable(TableEnum.TableCurriculumVitae);
+
             base.OnModelCreating(builder);
         }
     }

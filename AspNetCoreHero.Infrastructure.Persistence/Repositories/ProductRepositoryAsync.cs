@@ -2,7 +2,6 @@
 using AspNetCoreHero.Application.Interfaces.Repositories;
 using AspNetCoreHero.Application.Interfaces.Shared;
 using AspNetCoreHero.Application.Wrappers;
-using AspNetCoreHero.Domain.Dtos;
 using AspNetCoreHero.Domain.Entities;
 using AspNetCoreHero.Infrastructure.Persistence.Contexts;
 using AspNetCoreHero.Infrastructure.Persistence.Extensions;
@@ -10,7 +9,6 @@ using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Linq.Expressions;
 using System.Threading.Tasks;
 
 namespace AspNetCoreHero.Infrastructure.Persistence.Repositories
@@ -49,12 +47,8 @@ namespace AspNetCoreHero.Infrastructure.Persistence.Repositories
             }
             catch (Exception ex)
             {
-
                 throw;
             }
-
-
-
         }
 
         public async Task<IReadOnlyList<Product>> GetAllWithCategoriesWithoutImagesAsync(bool isCached = false)

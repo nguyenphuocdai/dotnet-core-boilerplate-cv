@@ -14,12 +14,8 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.AspNetCore.Mvc.ViewFeatures;
 using Microsoft.Extensions.Logging;
-using SixLabors.ImageSharp;
-using SixLabors.ImageSharp.PixelFormats;
-using SixLabors.ImageSharp.Processing;
 using System;
 using System.Collections.Generic;
-using System.IO;
 using System.Linq;
 using System.Threading.Tasks;
 
@@ -59,7 +55,6 @@ namespace AspNetCoreHero.Web.Areas.Products.Pages
             }
             else
             {
-
                 var categories = await Mediator.Send(new GetAllProductCategoriesQuery());
                 var response = await Mediator.Send(new GetProductByIdQuery { Id = id });
                 var viewModel = Mapper.Map<ProductViewModel>(response.Data);

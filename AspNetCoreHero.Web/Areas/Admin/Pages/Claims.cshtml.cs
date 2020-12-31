@@ -41,6 +41,7 @@ namespace AspNetCoreHero.Web.Areas.Admin.Pages
             allPermissions.GetPermissions(typeof(MasterPermissions), roleId);
             allPermissions.GetPermissions(typeof(ProductPermissions), roleId);
             allPermissions.GetPermissions(typeof(ProductCategoryPermissions), roleId);
+            allPermissions.GetPermissions(typeof(CurriculumVitaePermissions), roleId);
             var role = await _roleManager.FindByIdAsync(roleId);
             RoleId = roleId;
             var claims = await _roleManager.GetClaimsAsync(role);

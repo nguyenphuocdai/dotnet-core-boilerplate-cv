@@ -1,5 +1,5 @@
 ﻿@using AspNetCoreHero.Web.Areas.Admin.ViewModels
-@inject Microsoft.AspNetCore.Mvc.Localization.IViewLocalizer localizer
+@inject IViewLocalizer localizer
 @model RolesViewModel
 <form id="create-form" method="post" asp-area="Admin" asp-page="Roles" asp-route-id="@Model.Id" asp-page-handler="CreateOrEdit" onsubmit="return jQueryModalPost(this);">
 

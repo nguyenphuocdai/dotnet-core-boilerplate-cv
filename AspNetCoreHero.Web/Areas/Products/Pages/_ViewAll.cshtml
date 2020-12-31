@@ -44,7 +44,7 @@
             @if (User.Claims.Any(a => a.Value == MasterPermissions.Update || a.Value == ProductPermissions.Update || a.Value == MasterPermissions.Delete || a.Value == ProductPermissions.Delete))
             {
 
-                <td text-right">
+                <td class="text-right">
                     <div class="btn-group">
                         <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                             Action

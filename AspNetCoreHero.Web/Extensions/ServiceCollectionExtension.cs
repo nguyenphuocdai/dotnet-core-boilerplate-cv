@@ -11,11 +11,11 @@ namespace AspNetCoreHero.Web.Extensions
         {
             services.Configure<RequestLocalizationOptions>(options =>
             {
-                var cultures = new List<CultureInfo> {
-        new CultureInfo("en"),
-         new CultureInfo("ar"),
-        new CultureInfo("fr")
-                };
+                List<CultureInfo> cultures = new List<CultureInfo>();
+                cultures.Add(new CultureInfo("en"));
+                cultures.Add(new CultureInfo("ar"));
+                cultures.Add(new CultureInfo("fr"));
+
                 options.DefaultRequestCulture = new Microsoft.AspNetCore.Localization.RequestCulture("en");
                 options.SupportedCultures = cultures;
                 options.SupportedUICultures = cultures;

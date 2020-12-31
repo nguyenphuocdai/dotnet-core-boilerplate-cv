@@ -1,9 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
-
-namespace AspNetCoreHero.Web.Areas.ProductCategories.ViewModels
+﻿namespace AspNetCoreHero.Web.Areas.ProductCategories.ViewModels
 {
     public class ProductCategoryViewModel
     {

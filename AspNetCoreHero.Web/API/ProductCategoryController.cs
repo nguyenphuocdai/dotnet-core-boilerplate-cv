@@ -1,10 +1,8 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using AspNetCoreHero.Application.Features.ProductCategories.Queries.GetAll;
+using Microsoft.AspNetCore.Mvc;
+using System;
 using System.Linq;
 using System.Threading.Tasks;
-using AspNetCoreHero.Application.Features.ProductCategories.Queries.GetAll;
-using Microsoft.AspNetCore.Http;
-using Microsoft.AspNetCore.Mvc;
 
 namespace AspNetCoreHero.Web.API
 {

@@ -1,14 +1,13 @@
-﻿
-$(document).ready(function () {
+﻿$(document).ready(function () {
     $('.form-image').click(function () { $('#customFile').trigger('click'); });
     $(function () {
         $('.selectpicker').selectpicker();
     });
-	setTimeout(function () {
-		$('body').addClass('loaded');
+    setTimeout(function () {
+        $('body').addClass('loaded');
     }, 200);
 
-    jQueryModalGet = (url, title) => {
+    window.jQueryModalGet = (url, title) => {
         try {
             $.ajax({
                 type: 'GET',
@@ -19,21 +18,20 @@ $(document).ready(function () {
                     $('#form-modal .modal-body').html(res.html);
                     $('#form-modal .modal-title').html(title);
                     $('#form-modal').modal('show');
-                    console.log(res);
                 },
                 error: function (err) {
-                    console.log(err)
+                    console.log(err);
                 }
-            })
+            });
             //to prevent default form submit event
             return false;
         } catch (ex) {
-            console.log(ex)
+            console.log(ex);
         }
-       
-    }
 
-    jQueryModalPost = form => {
+    };
+
+    window.jQueryModalPost = form => {
         try {
             $.ajax({
                 type: 'POST',
@@ -43,20 +41,21 @@ $(document).ready(function () {
                 processData: false,
                 success: function (res) {
                     if (res.isValid) {
-                        $('#viewAll').html(res.html)
+                        $('#viewAll').html(res.html);
                         $('#form-modal').modal('hide');
                     }
                 },
                 error: function (err) {
-                    console.log(err)
+                    console.log(err);
                 }
-            })
+            });
             return false;
         } catch (ex) {
-            console.log(ex)
+            console.log(ex);
         }
-    }
-    jQueryModalDelete = form => {
+        return false;
+    };
+    window.jQueryModalDelete = form => {
         if (confirm('Are you sure to delete this record ?')) {
             try {
                 $.ajax({
@@ -67,21 +66,19 @@ $(document).ready(function () {
                     processData: false,
                     success: function (res) {
                         if (res.isValid) {
-                            $('#viewAll').html(res.html)
+                            $('#viewAll').html(res.html);
                         }
                     },
                     error: function (err) {
-                        console.log(err)
+                        console.log(err);
                     }
-                })
+                });
             } catch (ex) {
-                console.log(ex)
+                console.log(ex);
             }
         }
-
         //prevent default form submit event
         return false;
     }
-
 });
 

@@ -1,11 +1,11 @@
 ﻿@page
 @model AspNetCoreHero.Web.Areas.Products.Pages.IndexModel
-@inject Microsoft.AspNetCore.Mvc.Localization.IViewLocalizer localizer
+@inject Microsoft.AspNetCore.Mvc.Localization.IViewLocalizer Localizer
 @{
 }
 @{
-    ViewData["Title"] = localizer["Products"];
-    ViewData["Caption"] = localizer["Manage Products here"];
+    ViewData["Title"] = Localizer["Products"];
+    ViewData["Caption"] = Localizer["Manage Products here"];
 }
 <div class="card">
     <div class="col-sm-12" style="padding:20px">

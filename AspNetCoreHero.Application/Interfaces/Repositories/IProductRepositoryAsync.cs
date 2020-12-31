@@ -1,9 +1,5 @@
 ﻿using AspNetCoreHero.Application.Wrappers;
-using AspNetCoreHero.Domain.Dtos;
 using AspNetCoreHero.Domain.Entities;
-using System;
-using System.Collections.Generic;
-using System.Text;
 using System.Threading.Tasks;
 
 namespace AspNetCoreHero.Application.Interfaces.Repositories

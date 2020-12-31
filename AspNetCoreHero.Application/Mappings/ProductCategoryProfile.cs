@@ -2,9 +2,6 @@
 using AspNetCoreHero.Application.Features.ProductCategories.Queries.GetAll;
 using AspNetCoreHero.Domain.Entities;
 using AutoMapper;
-using System;
-using System.Collections.Generic;
-using System.Text;
 
 namespace AspNetCoreHero.Application.Mappings
 {

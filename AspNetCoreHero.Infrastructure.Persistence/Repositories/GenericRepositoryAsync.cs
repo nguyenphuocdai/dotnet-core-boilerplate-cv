@@ -12,12 +12,16 @@ namespace AspNetCoreHero.Infrastructure.Persistence.Repositories
 {
     public class GenericRepositoryAsync<T> : IGenericRepositoryAsync<T> where T : class
     {
-        private readonly static CacheTech cacheTech = CacheTech.Memory;
+        private static readonly CacheTech cacheTech = CacheTech.Memory;
         private readonly string cacheKey = $"{typeof(T)}";
         private readonly ApplicationContext _dbContext;
         private readonly Func<CacheTech, ICacheService> _cacheService;
 
-        public IQueryable<T> Entities => _dbContext.Set<T>();
+        public IQueryable<T> Entities
+        {
+            get => _dbContext.Set<T>();
+            set => throw new NotImplementedException();
+        }
 
         public GenericRepositoryAsync(ApplicationContext dbContext, Func<CacheTech, ICacheService> cacheService)
         {

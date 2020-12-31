@@ -1,18 +1,5 @@
-# ASP.NET Core Hero - Boilerplate Template
-
-![.NET Core](https://github.com/iammukeshm/AspNetCoreHero-Boilerplate/workflows/.NET%20Core/badge.svg?branch=master)
-![GitHub stars](https://img.shields.io/github/stars/iammukeshm/AspNetCoreHero-Boilerplate)
-[![Twitter Follow](https://img.shields.io/twitter/follow/codewithmukesh?style=social&label=follow)](https://twitter.com/codewithmukesh)
-
-
-![ASP.NET Core Hero - Boilerplate Template](https://www.codewithmukesh.com/wp-content/uploads/2020/10/Featured-Image.png)
-## Beta V1.0 is Out!
-Feel Free to Clone the Project and try it out.
-
 ## Releases
 v1.1 - Beta Release - Clone the Repository to get the latest codebase
-
-v1.0 - Beta Release - [Download Beta-V1.0 Release](https://github.com/iammukeshm/AspNetCoreHero-Boilerplate/releases/tag/v1.0) 
 
 ### Changelog
 #### v1.1
@@ -38,10 +25,6 @@ v1.0 - Beta Release - [Download Beta-V1.0 Release](https://github.com/iammukeshm
 
 The Basic Idea is to save hours of development time. The users should be able to start off from the point all the technical aspects are already covered. The only thhing we need to worry is about implementing the Business Logic. I am planning this Project to have 2 realms - A Fluid UI Based ASP.NET Core 3.1 Razor Project and a WebAPI Project that provided data to public via valid JWT.
 
-## Give a Star ⭐️
-If you found this Implementation helpful or used it in your Projects, do give it a star. Thanks!
-Or, If you are feeling really generous, [Support the Project with a small contribution!](https://www.buymeacoffee.com/codewithmukesh)
-
 ### Tech Stack
 - ASP.NET Core 3.1 Razor Pages / Controllers / Web API 
 - Entity Framework Core
@@ -61,8 +44,6 @@ Or, If you are feeling really generous, [Support the Project with a small contri
 - `dotnet run` (OR) Run the Solution using Visual Studio 2019
 
 PS - If the above code doesnt work for some reason, try using -c instead of -context or vice versa.
-
-Check out my [blog](https://www.codewithmukesh.com) or say [Hi on Twitter!](https://twitter.com/codewithmukesh)
    
 ### Default Roles & Credentials
 As soon you build and run your application, default users and roles get added to the database.
@@ -127,27 +108,3 @@ Check out a [Diagramatic Representation of the Architecture here](https://www.co
 - Swagger UI with Bearer Auth
 - API Versioning
 
-
-### Hangfire Server
-- Not yet used*
-
-and much more. Feel Free to Clone the Project and try it out. Raise any issues / requests that you may find.
-
-## Support
-Support This Project to keep it active.
-
-<a href="https://www.buymeacoffee.com/codewithmukesh" target="_blank"><img src="https://cdn.buymeacoffee.com/buttons/default-orange.png" alt="Buy Me A Coffee" width="200"  ></a>
-
-## Questions? Bugs? Suggestions for Improvement?
-Having any issues or troubles getting started? [Get in touch with me](https://www.codewithmukesh.com/contact) or [Raise a Bug or Feature Request](https://github.com/iammukeshm/AspNetCoreHero-Boilerplate/issues/new/choose). Always happy to help.
-
-## About the Author
-### Mukesh Murugan
-- Blogs at [codewithmukesh.com](https://www.codewithmukesh.com)
-- Facebook - [codewithmukesh](https://www.facebook.com/codewithmukesh)
-- Twitter - [Mukesh Murugan](https://www.twitter.com/iammukeshm)
-- Twitter - [codewithmukesh](https://www.twitter.com/codewithmukesh)
-- Linkedin - [Mukesh Murugan](https://www.linkedin.com/in/iammukeshm/)
-
-## Licensing
-iammukeshm/AspNetCoreHero-Boilerplate Project is licensed with the [MIT License](https://github.com/iammukeshm/AspNetCoreHero-Boilerplate/blob/master/LICENSE).

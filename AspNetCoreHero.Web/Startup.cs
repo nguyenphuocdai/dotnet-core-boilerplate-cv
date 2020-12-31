@@ -13,7 +13,6 @@ using Microsoft.AspNetCore.Mvc.Infrastructure;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.DependencyInjection.Extensions;
-using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
 using NToastNotify;
 using Serilog;
@@ -23,11 +22,11 @@ namespace AspNetCoreHero.Web
 {
     public class Startup
     {
-        public IConfiguration _configuration { get; }
+        public IConfiguration Configuration { get; }
         public Startup(IConfiguration configuration)
         {
             Log.Logger = new LoggerConfiguration().ReadFrom.Configuration(configuration).CreateLogger();
-            _configuration = configuration;
+            Configuration = configuration;
         }
 
        
@@ -48,9 +47,9 @@ namespace AspNetCoreHero.Web
                     PositionClass = ToastPositions.BottomRight
                 });
             services.AddRouting(o => o.LowercaseUrls = true);
-            services.AddSharedInfrastructure(_configuration);
-            services.AddPersistenceInfrastructureForWeb(_configuration);
-            services.AddAuthenticationSchemeForWeb(_configuration);
+            services.AddSharedInfrastructure(Configuration);
+            services.AddPersistenceInfrastructureForWeb(Configuration);
+            services.AddAuthenticationSchemeForWeb(Configuration);
             services.AddHttpContextAccessor();
             services.AddMultiLingualSupport();
             services.AddRazorPages().AddRazorRuntimeCompilation().AddFluentValidation(fv =>

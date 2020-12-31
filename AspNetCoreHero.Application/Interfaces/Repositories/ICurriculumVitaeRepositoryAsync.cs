@@ -2,7 +2,7 @@
 
 namespace AspNetCoreHero.Application.Interfaces.Repositories
 {
-    public interface IProductCategoryRepositoryAsync : IGenericRepositoryAsync<ProductCategory>
+    public interface ICurriculumVitaeRepositoryAsync : IGenericRepositoryAsync<CurriculumVitae>
     {
     }
 }

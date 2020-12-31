@@ -1,9 +1,6 @@
 ﻿using AspNetCoreHero.Infrastructure.Persistence.Identity;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
-using System;
-using System.Collections.Generic;
-using System.Text;
 
 namespace AspNetCoreHero.Infrastructure.Persistence.Extensions
 {
@@ -39,7 +36,6 @@ namespace AspNetCoreHero.Infrastructure.Persistence.Extensions
                 entity.ToTable("RoleClaims");
 
             });
-
             builder.Entity<IdentityUserToken<string>>(entity =>
             {
                 entity.ToTable("UserTokens");

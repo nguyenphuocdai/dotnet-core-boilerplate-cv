@@ -8,13 +8,13 @@ using System;
 
 namespace AspNetCoreHero.Infrastructure.Persistence.Repositories
 {
-    public class ProductCategoryRepositoryAsync : GenericRepositoryAsync<ProductCategory>, IProductCategoryRepositoryAsync
+    public class CurriculumVitaeRepositoryAsync : GenericRepositoryAsync<CurriculumVitae>, ICurriculumVitaeRepositoryAsync
     {
-        private readonly DbSet<ProductCategory>  _category;
+        private readonly DbSet<CurriculumVitae>  _category;
 
-        public ProductCategoryRepositoryAsync(ApplicationContext dbContext, Func<CacheTech, ICacheService> cacheService) : base(dbContext, cacheService)
+        public CurriculumVitaeRepositoryAsync(ApplicationContext dbContext, Func<CacheTech, ICacheService> cacheService) : base(dbContext, cacheService)
         {
-            _category = dbContext.Set<ProductCategory>();
+            _category = dbContext.Set<CurriculumVitae>();
         }
     }
 }

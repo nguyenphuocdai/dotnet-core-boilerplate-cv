@@ -1,8 +1,6 @@
 ﻿using AspNetCoreHero.Application.Interfaces.Repositories;
 using AspNetCoreHero.Infrastructure.Persistence.Contexts;
 using System;
-using System.Collections.Generic;
-using System.Text;
 using System.Threading;
 using System.Threading.Tasks;
 
@@ -11,7 +9,7 @@ namespace AspNetCoreHero.Infrastructure.Persistence.Repositories
     public class UnitOfWork : IUnitOfWork
     {
         private readonly ApplicationContext _dbContext;
-        private bool disposed;
+        private bool _disposed;
 
         public UnitOfWork(ApplicationContext dbContext)
         {
@@ -37,7 +35,7 @@ namespace AspNetCoreHero.Infrastructure.Persistence.Repositories
 
         protected virtual void Dispose(bool disposing)
         {
-            if (!disposed)
+            if (!_disposed)
             {
                 if (disposing)
                 {
@@ -46,7 +44,7 @@ namespace AspNetCoreHero.Infrastructure.Persistence.Repositories
                 }
             }
             //dispose unmanaged resources
-            disposed = true;
+            _disposed = true;
         }
     }
 }

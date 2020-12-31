@@ -8,7 +8,7 @@ namespace AspNetCoreHero.Application.Interfaces.Repositories
 {
     public interface IGenericRepositoryAsync<T> where T : class
     {
-        IQueryable<T> Entities { get; }
+        IQueryable<T> Entities { get; set; }
         Task<T> GetByIdAsync(int id);
         Task<IReadOnlyList<T>> GetAllAsync(bool isCached = false);
         Task<IReadOnlyList<T>> GetPagedReponseAsync(int pageNumber, int pageSize);
