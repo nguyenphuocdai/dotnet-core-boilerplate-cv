@@ -10,11 +10,11 @@ namespace AspNetCoreHero.Infrastructure.Persistence.Repositories
 {
     public class CurriculumVitaeRepositoryAsync : GenericRepositoryAsync<CurriculumVitae>, ICurriculumVitaeRepositoryAsync
     {
-        private readonly DbSet<CurriculumVitae>  _category;
+        private readonly DbSet<CurriculumVitae>  _curriculumVitae;
 
         public CurriculumVitaeRepositoryAsync(ApplicationContext dbContext, Func<CacheTech, ICacheService> cacheService) : base(dbContext, cacheService)
         {
-            _category = dbContext.Set<CurriculumVitae>();
+            _curriculumVitae = dbContext.Set<CurriculumVitae>();
         }
     }
 }

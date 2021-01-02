@@ -10,24 +10,24 @@ namespace AspNetCoreHero.Application.Features.CurriculumVitae.Commands.Create
 {
     public partial class CreateCurriculumVitaeCommand : IRequest<Response<int>>
     {
+        public long Id { get; set; }
         public string Name { get; set; }
         public string Image { get; set; }
         public int TemplatePreviewID { get; set; }
         public bool IsPublished { get; set; }
     }
 
-    public partial class CreateCurriculumVitaeCommand : IRequestHandler<CreateCurriculumVitaeCommand, Response<int>>
+    public partial class CreateCurriculumVitaeCommandHandler : IRequestHandler<CreateCurriculumVitaeCommand, Response<int>>
     {
         private readonly ICurriculumVitaeRepositoryAsync _iCurriculumVitaeRepositoryAsyncAsync;
         private readonly IMapper _mapper;
-        private IUnitOfWork UnitOfWork { get; set; }
+        private IUnitOfWork UnitOfWork { get; }
 
-        public CreateCurriculumVitaeCommand(ICurriculumVitaeRepositoryAsync curriculumVitaeRepositoryAsync, IUnitOfWork unitOfWork, IMapper mapper)
+        public CreateCurriculumVitaeCommandHandler(ICurriculumVitaeRepositoryAsync curriculumVitaeRepositoryAsync, IUnitOfWork unitOfWork, IMapper mapper)
         {
             _iCurriculumVitaeRepositoryAsyncAsync = curriculumVitaeRepositoryAsync;
             UnitOfWork = unitOfWork;
             _mapper = mapper;
-
         }
 
         public async Task<Response<int>> Handle(CreateCurriculumVitaeCommand request, CancellationToken cancellationToken)

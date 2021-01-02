@@ -99,7 +99,7 @@ namespace AspNetCoreHero.Web.Areas.Products.Pages
                         }
                         catch (Exception ex)
                         {
-                            Logger.LogInformation(ex.Message);
+                            Logger.LogInformation(ex.Message, ex);
                             throw;
                         }
 
@@ -115,7 +115,6 @@ namespace AspNetCoreHero.Web.Areas.Products.Pages
                 }
                 catch (Exception ex)
                 {
-
                     Notify.AddErrorToastMessage(ex.Message);
                     throw;
                 }

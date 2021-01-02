@@ -1,9 +1,3 @@
-using System;
-using System.Collections;
-using System.Collections.Generic;
-using System.Linq;
-using System.Reflection;
-using System.Threading.Tasks;
 using AspNetCoreHero.Application.Constants.Permissions;
 using AspNetCoreHero.Infrastructure.Persistence.Identity;
 using AspNetCoreHero.Web.Areas.Admin.ViewModels;
@@ -11,9 +5,9 @@ using AspNetCoreHero.Web.Helpers;
 using AspNetCoreHero.Web.Models.Shared;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
-using Microsoft.AspNetCore.Mvc.ModelBinding.Validation;
-using Microsoft.AspNetCore.Mvc.RazorPages;
-using Microsoft.AspNetCore.Mvc.ViewFeatures;
+using System.Collections.Generic;
+using System.Linq;
+using System.Threading.Tasks;
 
 namespace AspNetCoreHero.Web.Areas.Admin.Pages
 {

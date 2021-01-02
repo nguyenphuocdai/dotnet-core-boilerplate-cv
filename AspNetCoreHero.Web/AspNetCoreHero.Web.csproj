@@ -33,6 +33,7 @@
   <ItemGroup>
     <ProjectReference Include="..\AspNetCoreHero.Infrastructure.Persistence\AspNetCoreHero.Infrastructure.Persistence.csproj" />
     <ProjectReference Include="..\AspNetCoreHero.Infrastructure.Shared\AspNetCoreHero.Infrastructure.Shared.csproj" />
+    <ProjectReference Include="..\AspNetCoreHero.Library\AspNetCoreHero.Library.csproj" />
   </ItemGroup>
 
   <ItemGroup>

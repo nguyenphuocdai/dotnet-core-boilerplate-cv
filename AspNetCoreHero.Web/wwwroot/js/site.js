@@ -77,8 +77,9 @@
                 console.log(ex);
             }
         }
-        //prevent default form submit event
+
         return false;
+        //prevent default form submit event
     }
 });
 

@@ -5,16 +5,16 @@
     <thead>
         <tr>
             <th>
+                @localizer["Id"]
+            </th>
+            <th>
                 @localizer["Name"]
             </th>
             <th>
-                @localizer["Barcode"]
+                @localizer["Created"]
             </th>
             <th>
-                @localizer["Category"]
-            </th>
-            <th>
-                @localizer["Rate"]
+                @localizer["IsPublished"]
             </th>
             @if (User.Claims.Any(a => a.Value == MasterPermissions.Update || a.Value == CurriculumVitaePermissions.Update || a.Value == MasterPermissions.Delete || a.Value == CurriculumVitaePermissions.Delete))
             {
@@ -36,24 +36,35 @@
                     @curriculumVitae.Name
                 </td>
                 <td>
-                    @curriculumVitae.TemplatePreviewID
+                    @curriculumVitae.CreatedDisplay
                 </td>
                 <td>
-                    @curriculumVitae.IsPublished
+                    @if (@curriculumVitae.IsPublished)
+                    {
+                        <span class="badge badge-success">@localizer["Active"]</span>
+                    }
+                    else
+                    {
+                        <span class="badge badge-danger">@localizer["Deactivated"]</span>
+                    }
                 </td>
-                @if (User.Claims.Any(a => a.Value == MasterPermissions.Update || a.Value == CurriculumVitaePermissions.Update || a.Value == MasterPermissions.Delete || a.Value == CurriculumVitaePermissions.Delete))
+                @if (User.Claims.Any(a => 
+                    a.Value == MasterPermissions.Update || 
+                    a.Value == CurriculumVitaePermissions.Update || 
+                    a.Value == MasterPermissions.Delete || 
+                    a.Value == CurriculumVitaePermissions.Delete))
                 {
 
-                    <td class="text-right">
+                    <td >
                         <div class="btn-group">
                             <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                                 Action
                             </button>
                             <div class="dropdown-menu shadow animated--grow-in">
-                                @*@if (User.Claims.Any(a => a.Value == MasterPermissions.Update || a.Value == CurriculumVitaePermissions.Update))
+                                @if (User.Claims.Any(a => a.Value == MasterPermissions.Update || a.Value == CurriculumVitaePermissions.Update))
                                 {
                                     <a onclick="jQueryModalGet('/curriculumVitae?handler=CreateOrEdit&id=@curriculumVitae.Id','Edit CurriculumVitae')" class="dropdown-item"><i class="fas fa-pencil-alt"></i>  Edit</a>
-                                }*@
+                                }
                                 @if (User.Claims.Any(a => a.Value == MasterPermissions.Delete || a.Value == CurriculumVitaePermissions.Delete))
                                 {
 

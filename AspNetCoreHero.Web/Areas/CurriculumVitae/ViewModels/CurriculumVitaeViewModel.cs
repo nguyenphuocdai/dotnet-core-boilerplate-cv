@@ -1,4 +1,7 @@
-﻿namespace AspNetCoreHero.Web.Areas.CurriculumVitae.ViewModels
+﻿using AspNetCoreHero.Library.Enum;
+using System;
+
+namespace AspNetCoreHero.Web.Areas.CurriculumVitae.ViewModels
 {
     public class CurriculumVitaeViewModel
     {
@@ -8,9 +11,7 @@
         public int TemplatePreviewID { get; set; }
         public bool IsPublished { get; set; }
         public bool IsDeleted { get; set; }
-        public long DateTimeCreate { get; set; }
-        public long DateTimeModify { get; set; }
-        public int UserIdCreate { get; set; }
-        public int UserIdModify { get; set; }
+        public DateTime Created { get; set; }
+        public string CreatedDisplay => Created.ToString(PatternEnum.DateTimeDisplay);
     }
 }

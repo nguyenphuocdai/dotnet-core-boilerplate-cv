@@ -1,7 +1,4 @@
 ﻿using AspNetCoreHero.Application.Features.ProductCategories.Queries.GetAll;
-using System;
-using System.Collections.Generic;
-using System.Text;
 
 namespace AspNetCoreHero.Application.Features.Products.Queries.GetAll
 {

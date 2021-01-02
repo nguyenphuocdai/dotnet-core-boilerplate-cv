@@ -4,10 +4,6 @@ using AspNetCoreHero.Application.Features.ProductCategories.Queries.GetAll;
 using AspNetCoreHero.Domain.Entities;
 using AspNetCoreHero.Web.Areas.ProductCategories.ViewModels;
 using AutoMapper;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
 
 namespace AspNetCoreHero.Web.Mappings
 {

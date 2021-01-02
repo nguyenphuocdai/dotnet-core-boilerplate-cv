@@ -30,7 +30,7 @@
                 <td>
                     @role.Id
                 </td>
-                <td text-right">
+                <td class="text-right">
                     @if (User.Claims.Any(a => a.Value == MasterPermissions.Update || a.Value == MasterPermissions.Delete) && role.Name != "SuperAdmin")
                     {
 
@@ -47,7 +47,7 @@
                                 }
                                 @if (User.Claims.Any(a => a.Value == MasterPermissions.Delete) && role.Name != "SuperAdmin" && role.Name != "Basic")
                                 {
-                                    <form id="form_delete_@role.Id" asp-page="Roles" method="post" asp-page-handler="Delete" asp-route-id="@role.Id" onsubmit="return jQueryModalDelete(this)" class="d-inline">
+                                    <form id="form_delete_@role.Id" asp-page="Roles" method="post" asp-page-handler="Delete" asp-route-id="@role.Id" onsubmit="return jQueryModalDelete(this);" class="d-inline">
                                         <a href="javascript:$('#form_delete_@role.Id').submit();" class="dropdown-item"><i class="fas fa-trash-alt"></i> @localizer["Delete"]</a>
                                     </form>
                                 }
