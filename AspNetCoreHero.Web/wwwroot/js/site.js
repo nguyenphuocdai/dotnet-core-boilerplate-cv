@@ -7,6 +7,7 @@
         $('body').addClass('loaded');
     }, 200);
 
+
     window.jQueryModalGet = (url, title) => {
         try {
             $.ajax({
@@ -55,31 +56,43 @@
         }
         return false;
     };
-    window.jQueryModalDelete = form => {
-        if (confirm('Are you sure to delete this record ?')) {
-            try {
-                $.ajax({
-                    type: 'POST',
-                    url: form.action,
-                    data: new FormData(form),
-                    contentType: false,
-                    processData: false,
-                    success: function (res) {
-                        if (res.isValid) {
-                            $('#viewAll').html(res.html);
-                        }
-                    },
-                    error: function (err) {
-                        console.log(err);
-                    }
-                });
-            } catch (ex) {
-                console.log(ex);
-            }
-        }
 
-        return false;
+    window.jQueryModalDelete = form => {
+        Swal.fire({
+            title: 'Are you sure?',
+            text: "You won't be able to revert this!",
+            icon: 'warning',
+            showCancelButton: true,
+            confirmButtonColor: '#3085d6',
+            cancelButtonColor: '#d33',
+            confirmButtonText: 'Yes, delete it!'
+        }).then((result) => {
+            if (result.isConfirmed) {
+                try {
+                    $.ajax({
+                        type: 'POST',
+                        url: form.action,
+                        data: new FormData(form),
+                        contentType: false,
+                        processData: false,
+                        success: function (res) {
+                            if (res.isValid) {
+                                $('#viewAll').html(res.html);
+                            }
+                        },
+                        error: function (err) {
+                            console.log(err);
+                        }
+                    });
+                } catch (ex) {
+                    console.log(ex);
+                }
+
+
+            }
+        });
         //prevent default form submit event
+        return false;
     }
 });
 

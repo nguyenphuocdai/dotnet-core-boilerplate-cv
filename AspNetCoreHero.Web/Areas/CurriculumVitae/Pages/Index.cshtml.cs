@@ -1,5 +1,6 @@
 using AspNetCoreHero.Application.Constants.Permissions;
 using AspNetCoreHero.Application.Features.CurriculumVitae.Commands.Create;
+using AspNetCoreHero.Application.Features.CurriculumVitae.Commands.Delete;
 using AspNetCoreHero.Application.Features.CurriculumVitae.Queries.GetAll;
 using AspNetCoreHero.Application.Wrappers;
 using AspNetCoreHero.Web.Areas.CurriculumVitae.ViewModels;
@@ -99,6 +100,23 @@ namespace AspNetCoreHero.Web.Areas.CurriculumVitae.Pages
 
             html = await Renderer.RenderPartialToStringAsync("_CreateOrEdit", curriculumVitae);
             return new JsonResult(new { isValid = false, html = html });
+        }
+
+        public async Task<JsonResult> OnPostDeleteAsync(int id)
+        {
+            User.HasRequiredClaims(new List<string> { MasterPermissions.Delete, CurriculumVitaePermissions.Delete });
+
+            await Mediator.Send(new DeleteCurriculumVitaeByIdCommand { Id = id });
+            Notify.AddInfoToastMessage($"Curriculum with Id {id} Deleted.");
+            var response = await Mediator.Send(new GetAllCurriculumVitaeQuery());
+            if (response.Succeeded)
+            {
+
+                var data = response.Data;
+                CurriculumVitaes = Mapper.Map<IEnumerable<CurriculumVitaeViewModel>>(data);
+            }
+            string html = await Renderer.RenderPartialToStringAsync("_ViewAll", CurriculumVitaes);
+            return new JsonResult(new { isValid = true, html });
         }
     }
 }
